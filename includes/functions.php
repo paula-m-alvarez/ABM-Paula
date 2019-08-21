@@ -3,18 +3,6 @@
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__ . '/db.php');
 
-// __FILE__ es una referencia al archivo actual, en este caso devuelve la ruta completa de funciones.php
-//dirname(algo) devuelve el direcotorio padre de algo
-//En este caso dirname(__FILE__) es la ruta completa a includes
-//dirname(dirname(__FILE__)) es la ruta completa a la base del proyecto
-//Definimos __ROOT__ como dirname(dirname(__FILE)) para que lo tengas como una variable global 
-//(mala idea en general pero en casos muy particulares sirve)
-
-
-//index.php
-
-//nos trae los datos de todos los barrios
-
 function obtener_barrios($conexion) {
 
 $query = "SELECT bar.id,numero,logo,banner,latitud,longitud 
@@ -79,9 +67,6 @@ function insertar_barrio($conexion, $barrio, $logoName, $bannerName, $latitud, $
 }
 
 //edit.php
-
-//dadas una conexion a la db y un id nos dice a que barrío pertenece ese id
-//nos trae los datos de un barrio
 
 function obtener_barrio($conexion, $id) {
 
